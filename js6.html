@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>String Reversal</title>
+<script>
+function reverse(str) {
+    // Split the string into an array of characters, reverse the array, and join it back into a string
+    return str.split('').reverse().join('');
+}
+
+function reverseAndDisplay() {
+    var inputString = document.getElementById("inputString").value;
+    var reversedString = reverse(inputString);
+    var resultDisplay = document.getElementById("resultDisplay");
+    resultDisplay.textContent = "Reversed string: " + reversedString;
+}
+</script>
+</head>
+<body>
+
+<h2>String Reversal</h2>
+
+<p>Enter a string to reverse:</p>
+<input type="text" id="inputString">
+<button onclick="reverseAndDisplay()">Reverse</button>
+
+<div id="resultDisplay"></div>
+
+</body>
+</html>
