@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sum and Multiply Functions</title>
+<script>
+function sum(numbers) {
+    var total = 0;
+    for (var i = 0; i < numbers.length; i++) {
+        total += numbers[i];
+    }
+    return total;
+}
+
+function multiply(numbers) {
+    var product = 1;
+    for (var i = 0; i < numbers.length; i++) {
+        product *= numbers[i];
+    }
+    return product;
+}
+
+function calculateSum() {
+    var input = document.getElementById("inputArray").value;
+    var numbers = input.split(",").map(Number);
+    var result = sum(numbers);
+    var resultDisplay = document.getElementById("sumResult");
+    resultDisplay.textContent = "Sum: " + result;
+}
+
+function calculateProduct() {
+    var input = document.getElementById("inputArray").value;
+    var numbers = input.split(",").map(Number);
+    var result = multiply(numbers);
+    var resultDisplay = document.getElementById("multiplyResult");
+    resultDisplay.textContent = "Product: " + result;
+}
+</script>
+</head>
+<body>
+
+<h2>Sum and Multiply Functions</h2>
+
+<p>Enter numbers separated by commas:</p>
+<input type="text" id="inputArray">
+<button onclick="calculateSum()">Calculate Sum</button>
+<button onclick="calculateProduct()">Calculate Product</button>
+
+<div id="sumResult"></div>
+<div id="multiplyResult"></div>
+
+</body>
+</html>
