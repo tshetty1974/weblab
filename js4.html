@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rovarspraket Translator</title>
+<script>
+function isConsonant(char) {
+    return !'aeiou'.includes(char.toLowerCase()) && /[a-zA-Z]/.test(char);
+}
+
+function translate(text) {
+    var translatedText = '';
+
+    for (var i = 0; i < text.length; i++) {
+        var currentChar = text[i];
+
+        // Check if the current character is a consonant
+        if (isConsonant(currentChar)) {
+            // Double the consonant and place an 'o' in between
+            translatedText += currentChar + 'o' + currentChar;
+        } else {
+            translatedText += currentChar;
+        }
+    }
+
+    return translatedText;
+}
+
+function translateAndDisplay() {
+    var inputText = document.getElementById("inputText").value;
+    var translatedText = translate(inputText);
+    var resultDisplay = document.getElementById("resultDisplay");
+    resultDisplay.textContent = "Translated text: " + translatedText;
+}
+</script>
+</head>
+<body>
+
+<h2>Rovarspraket Translator</h2>
+
+<p>Enter text to translate into "rövarspråket":</p>
+<textarea id="inputText" rows="4" cols="50"></textarea><br>
+<button onclick="translateAndDisplay()">Translate</button>
+
+<div id="resultDisplay"></div>
+
+</body>
+</html>
