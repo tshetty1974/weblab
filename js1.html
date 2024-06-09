@@ -1,10 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JavaScript Max Function</title>
-    <script>
+    <title>Max Number Finder</title>
+    <script type="text/javascript">
         function max(num1, num2) {
             if (num1 > num2) {
                 return num1;
@@ -13,12 +11,21 @@
             }
         }
 
-        // Example usage:
-        console.log(max(5, 10)); // Output: 10
-        console.log(max(-3, 7)); // Output: 7
+        function getUserInputAndFindMax() {
+            let num1 = parseFloat(prompt("Enter the first number:"));
+            let num2 = parseFloat(prompt("Enter the second number:"));
+            
+            if (isNaN(num1) || isNaN(num2)) {
+                alert("Please enter valid numbers.");
+            } else {
+                let result = max(num1, num2);
+                alert("The larger number is: " + result);
+            }
+        }
     </script>
 </head>
 <body>
-    <!-- You can leave this body empty -->
+    <h1>Find the Maximum Number</h1>
+    <button onclick="getUserInputAndFindMax()">Enter Numbers</button>
 </body>
 </html>
